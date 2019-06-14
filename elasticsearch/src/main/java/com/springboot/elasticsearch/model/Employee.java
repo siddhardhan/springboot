@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 
 // Elastic search annotation.
-@Document(indexName= "newemployees", type= "employee")
+@Document(indexName= "siddhardha", type= "employee")
 public class Employee {
 
 	@Id
