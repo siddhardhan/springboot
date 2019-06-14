@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "e6be8b2c-2d9d-4532-8dd9-b1d1e61e65aa",
+		"name": "Springboot-elasticsearch-tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"name\": \"Tori Carless\",\n    \"designation\": \"Administrator\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Leticia Mariotte\",\n    \"designation\": \"Developer\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Adriano Waldocke\",\n    \"designation\": \"Manager\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Morena Roughey\",\n    \"designation\": \"Administrator\"\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Ingeberg Creer\",\n    \"designation\": \"Sr. Developer\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/saveemployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"saveemployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all employees by designation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/findbydesignation/developer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"findbydesignation",
+						"developer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
