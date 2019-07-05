@@ -18,28 +18,28 @@ import java.io.IOException;
 
 @Configuration
 
-public class ElasticsearchConfig {
+public class ElasticsearchConfig1 {
 
-    @Value("${elasticsearch.host}")
-    private String host;
+    @Value("${elasticsearch.2.host}")
+    private String host2;
 
-    @Value("${elasticsearch.port}")
-    private int port;
+    @Value("${elasticsearch.2.port}")
+    private int port2;
 
-    @Value("${elasticsearch.username}")
-    private String userName;
+    @Value("${elasticsearch.2.username}")
+    private String userName2;
 
-    @Value("${elasticsearch.password}")
-    private String password;
+    @Value("${elasticsearch.2.password}")
+    private String password2;
 
     @Bean(destroyMethod = "close")
-    public RestHighLevelClient restClient() throws IOException {
+    public RestHighLevelClient restClient2() throws IOException {
 
         final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY,
-                new UsernamePasswordCredentials(userName, password));
+                new UsernamePasswordCredentials(userName2, password2));
 
-        RestClientBuilder builder = RestClient.builder(new HttpHost(host, port))
+        RestClientBuilder builder = RestClient.builder(new HttpHost(host2, port2))
                 .setHttpClientConfigCallback(httpClientBuilder -> httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider));
 
         RestHighLevelClient client = new RestHighLevelClient(builder);

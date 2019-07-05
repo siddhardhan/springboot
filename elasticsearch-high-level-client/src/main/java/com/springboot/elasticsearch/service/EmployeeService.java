@@ -29,6 +29,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -43,14 +44,12 @@ import static com.springboot.elasticsearch.util.Constant.TYPE;
 @Slf4j
 public class EmployeeService {
 
-
     private RestHighLevelClient client;
-
 
     private ObjectMapper objectMapper;
 
     @Autowired
-    public EmployeeService(RestHighLevelClient client, ObjectMapper objectMapper) {
+    public EmployeeService(@Qualifier("restClient") RestHighLevelClient client, ObjectMapper objectMapper) {
         this.client = client;
         this.objectMapper = objectMapper;
     }
